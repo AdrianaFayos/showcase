@@ -4,14 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" type="text/css" rel="stylesheet" > 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Carrito Compra</title>
 </head>
 <body>
     
+    <h1 class="text-center">CARRITO DE COMPRA</h1>
+
+    <section class="row" id="articulos">
+          <div id="producto" class="col-2">
+            <img src="IMG/agua.png" class="card-img-top" height="90px">
+            <div class="card-body">
+              <h5 class="card-title">Agua</h5>
+              <p class="card-text"><span class="precio">0.40</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/leche.png" class="card-img-top" height="90px" width="40px">
+            <div class="card-body">
+              <h5 class="card-title">Leche</h5>
+              <p class="card-text"><span class="precio">0.90</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/pan.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Pan</h5>
+              <p class="card-text"><span class="precio">0.60</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/pasta.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Pasta</h5>
+              <p class="card-text"><span class="precio">1.20</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/pollo.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Pollo</h5>
+              <p class="card-text"><span class="precio">4.50</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/ternera.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Ternera</h5>
+              <p class="card-text"><span class="precio">6.90</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+           </div>
+          </div>
+          <div id="producto" class="col-2">
+            <img src="IMG/berenjena.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Berenjena</h5>
+              <p class="card-text"><span class="precio">1.80</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/esparragos.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Esparragos</h5>
+              <p class="card-text"><span class="precio">1.20</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2">
+            <img src="IMG/fresas.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Fresas</h5>
+              <p class="card-text"><span class="precio">3.60</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/Naranja.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Naranjas</h5>
+              <p class="card-text"><span class="precio">3.10</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2">
+            <img src="IMG/chocolate.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Chocolate</h5>
+              <p class="card-text"><span class="precio">1.30</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+          <div id="producto" class="col-2" >
+            <img src="IMG/galleta.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Galletas</h5>
+              <p class="card-text"><span class="precio">1.10</span>€</p>
+              <a href="#" class="btn btn-primary">Añadir</a>
+            </div>
+          </div>
+       </section>
+
+       <div id="carrito">
+           <img src="IMG/carrito.png" width="150px">
+       </div>
+         
     
 
 
-    <script src="js/main.js"></script>
+
+
+      <script src="js/main.js"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

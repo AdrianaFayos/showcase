@@ -1,0 +1,21 @@
+#articulos{
+    margin: 0em;
+}
+
+#producto {
+    margin: .2em;
+    border: 1px solid;
+    padding: 50px;
+    border-radius: 6px;
+    height: 300px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#carrito{
+    display: flex;
+    justify-content: center;
+}
