@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet" > 
+    <title>Carrito Compra</title>
+
+</head>
+<body>
+    
+    <header>
+       <nav>
+          <a class="principal" href="index.html">Productos</a>
+          <a class="contact" href="contacto.html">Contacto</a>  
+          <img src="IMG/carrito.png" name="Carro" width="50px"> 
+          <a class="carrito" href="carrito.html">Carrito</a>
+          <a class="buscador">
+            <input type="text" id="search" placeholder="Buscar aquí">
+            <button class="button" id="boton"><img src="IMG/boton.png" width="10px"></button>
+          </a>
+       </nav>           
+    </header>
+
+    <main class="cestafinal">
+        <div class="cesta" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2 class="carritotext">Carrito</h2>
+            <ul>
+                <!-- Los productos se añaden aquí por JS-->
+            </ul>
+            <br></br>
+            <div class="preciototal">Total:<span class="total"></span></div>
+            <button type="button">Realizar Compra</button>      
+          </div>
+    </main>
+
+    <footer> </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

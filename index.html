@@ -3,128 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" type="text/css" rel="stylesheet" > 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Carrito Compra</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" >    
+    <title>Productos</title>
 </head>
 <body>
     
-    <h1 class="text-center">CARRITO DE COMPRA</h1>
+ <header>
+   <nav>
+      <a class="principal" href="index.html">Productos</a>
+      <a class="contact" href="contacto.html">Contacto</a>   
+      <img src="IMG/carrito.png" name="Carro" width="50px">
+      <a class="carrito" href="carrito.html">Carrito</a>
+      <a class="buscador">
+          <input type="text" id="search" placeholder="Buscar aquí">
+          <button class="button" id="boton"><img src="IMG/boton.png" width="10px"></button>
+      </a>
+    </nav>           
+ </header>
 
-    <section class="row" id="articulos">
-          <div id="producto" class="col-2">
-            <img src="IMG/agua.png" class="card-img-top" height="90px">
-            <div class="card-body">
-              <h5 class="card-title">Agua</h5>
-              <p class="card-text"><span class="precio">0.40</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/leche.png" class="card-img-top" height="90px" width="40px">
-            <div class="card-body">
-              <h5 class="card-title">Leche</h5>
-              <p class="card-text"><span class="precio">0.90</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/pan.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Pan</h5>
-              <p class="card-text"><span class="precio">0.60</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/pasta.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Pasta</h5>
-              <p class="card-text"><span class="precio">1.20</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/pollo.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Pollo</h5>
-              <p class="card-text"><span class="precio">4.50</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/ternera.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Ternera</h5>
-              <p class="card-text"><span class="precio">6.90</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-           </div>
-          </div>
-          <div id="producto" class="col-2">
-            <img src="IMG/berenjena.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Berenjena</h5>
-              <p class="card-text"><span class="precio">1.80</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/esparragos.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Esparragos</h5>
-              <p class="card-text"><span class="precio">1.20</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2">
-            <img src="IMG/fresas.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Fresas</h5>
-              <p class="card-text"><span class="precio">3.60</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/Naranja.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Naranjas</h5>
-              <p class="card-text"><span class="precio">3.10</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2">
-            <img src="IMG/chocolate.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Chocolate</h5>
-              <p class="card-text"><span class="precio">1.30</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-          <div id="producto" class="col-2" >
-            <img src="IMG/galleta.png" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Galletas</h5>
-              <p class="card-text"><span class="precio">1.10</span>€</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-            </div>
-          </div>
-       </section>
+ <main class="contenedor">
 
-       <div id="carrito">
-           <img src="IMG/carrito.png" width="150px">
-       </div>
-         
-    
+   <div class="productos">
 
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/agua.png" draggable="true" ondragstart="drag(event)" name="Agua" width="70">
+      <p>Agua</p>
+      <span class="tooltiptext">0.40 €</span>
+    </div>
 
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/leche.png" draggable="true" ondragstart="drag(event)" name="Leche" width="70">
+      <p>Leche</p>
+      <span class="tooltiptext">0.90 €</span>
+    </div>
 
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/pan.png" draggable="true" ondragstart="drag(event)" name="Pan" width="80">
+      <p>Pan</p>
+      <span class="tooltiptext">0.60 €</span>
+    </div>
 
-      <script src="js/main.js"></script>
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="js/bootstrap.min.js"></script>
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/pasta.png" draggable="true" ondragstart="drag(event)" name="Pasta" width="80">
+      <p>Pasta</p>
+      <span class="tooltiptext">1.20 €</span>
+    </div>
 
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/pollo.png" draggable="true" ondragstart="drag(event)" name="Pollo" width="80">
+      <p>Pollo</p>
+      <span class="tooltiptext">4.50 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/ternera.png" draggable="true" ondragstart="drag(event)" name="Ternera" width="80">
+      <p>Ternera</p>
+      <span class="tooltiptext">6.90 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/berenjena.png" draggable="true" ondragstart="drag(event)" name="Berenjena" width="80">
+      <p>Berenjena</p>
+      <span class="tooltiptext">1.80 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/esparragos.png" draggable="true" ondragstart="drag(event)" name="Esparragos" width="80">
+      <p>Espárragos</p>
+      <span class="tooltiptext">1.20 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/fresas.png" draggable="true" ondragstart="drag(event)" name="Fresas" width="80">
+      <p>Fresas</p>
+      <span class="tooltiptext">3.60 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/Naranja.png" draggable="true" ondragstart="drag(event)" name="Naranjas" width="80">
+      <p>Naranjas</p>
+      <span class="tooltiptext">3.10 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/chocolate.png" draggable="true" ondragstart="drag(event)" name="Chocolate" width="80">
+      <p>Chocolate</p>
+      <span class="tooltiptext">1.30 €</span>
+    </div>
+
+    <div id="producto" class="tooltip" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="IMG/galleta.png" draggable="true" ondragstart="drag(event)" name="Galletas" width="80">
+      <p>Galletas</p>
+      <span class="tooltiptext">1.10 €</span>
+    </div>
+
+   </div>
+
+   <aside class="cestatotal">
+
+    <div class="cesta" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2 class="carritotext">Carrito</h2>
+      <ul>
+          <!-- Los productos se añaden aquí por JS -->
+      </ul>
+      <div class="preciototal">Total:<span class="total"></span></div>
+      <button type="button">Realizar Compra</button>      
+    </div>
+
+   </aside>
+
+ </main>
+
+ <footer> 
+
+ </footer>
+
+ <script src="js/main.js"></script>
+     
 </body>
 </html>
