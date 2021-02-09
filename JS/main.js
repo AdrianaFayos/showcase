@@ -1,4 +1,4 @@
-const almacen = {
+let almacen = {
 
     Agua: {
         precio: 0.4,
@@ -7,27 +7,27 @@ const almacen = {
 
     Leche: {
         precio: 0.9,
-        stock: 2,
+        stock: 3,
     },
 
     Pan: {
         precio: 0.6,
-        stock: 3,
+        stock: 9,
     },
 
     Pasta: {
         precio: 1.2,
-        stock: 1,
+        stock: 4,
     },
 
     Pollo: {
         precio: 4.5,
-        stock: 2,
+        stock: 3,
     },
 
     Ternera: {
         precio: 6.9,
-        stock: 1,
+        stock: 2,
     },
 
     Berenjena: {
@@ -57,12 +57,12 @@ const almacen = {
 
     Galletas: {
         precio: 1.1,
-        stock: 2,
+        stock: 4,
     },
 
 }
 
-const carrito = {
+let carrito = {
 
     Agua: 0,
     Leche: 0,
@@ -79,7 +79,7 @@ const carrito = {
 
 }
 
-function allowDrop(ev) {
+function startDrop(ev) {
     ev.preventDefault();
   }
   
@@ -90,5 +90,42 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
 
+    const producto = ev.dataTransfer.getData("text");
+
+    const productoElement = document.querySelector(".productos");
+
+    // Si no hay stock en el almacen ya no podemos añadir al carrito.
+
+    if (almacen[producto].stock === 0) {
+
+        alert('Lo siento, no quedan más unidades.');
+        drag(ev) == false;
+
+    } else{
+        
+    almacen[producto].stock--;
+
+    console.log(`Quedan ${almacen[producto].stock} unidades de ${producto} en el almacen."`);
+
+    const lista = document.querySelector('.cesta ul');
+
+    if (carrito[producto] === 0) {
+        
+        carrito[producto] = 1;
+
+        document.querySelector('.cesta ul').innerHTML += `
+        <p>${almacen[producto]} ${carrito[producto]}</p>`
+        
+    }else {
+
+        carrito[producto]++;
+        
+
+    }
+
+
+
     
-}    
+} 
+
+}

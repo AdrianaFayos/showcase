@@ -59,6 +59,13 @@ nav {
     width: 10em;
 }
 
+ul {
+    list-style:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .cestafinal {
     display: flex;
@@ -71,11 +78,10 @@ nav {
     height: max-content;
 }
 
-#contacto {
+.form {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 5em;
+    margin: 5em;
     background-color: rgb(198, 224, 245);
     padding: 20px;
     border: 3px solid;
@@ -95,12 +101,13 @@ button:hover{
     font-weight: bold;
 }
 
+
 footer{
     background-color: rgb(198, 224, 245);
     padding: 10px;
     border: 3px solid;
+    bottom: 0;
     border-color: rgb(233, 179, 128);
     position: absolute;
-    margin-top: 5em;
     width: 100%;
 }
