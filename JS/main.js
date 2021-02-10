@@ -92,8 +92,6 @@ function drop(ev) {
 
     const producto = ev.dataTransfer.getData("text");
 
-    const productoElement = document.querySelector(".productos");
-
     // Si no hay stock en el almacen ya no podemos añadir al carrito.
 
     if (almacen[producto].stock === 0) {
@@ -101,29 +99,34 @@ function drop(ev) {
         alert('Lo siento, no quedan más unidades.');
         drag(ev) == false;
 
-    } else{
+    } /* Si hay stock: */ else{
         
     almacen[producto].stock--;
 
     console.log(`Quedan ${almacen[producto].stock} unidades de ${producto} en el almacen."`);
 
-    const lista = document.querySelector('.cesta ul');
+    // Si no estaba en el carrito, lo añadimos
 
     if (carrito[producto] === 0) {
         
-        carrito[producto] = 1;
-
-        document.querySelector('.cesta ul').innerHTML += `
-        <p>${almacen[producto]} ${carrito[producto]}</p>`
+        const button = document.createElement('button');
+        button.className = "botonEliminar";
+        button.type = 'button';
+        button.innerText = '-';
         
-    }else {
+        carrito[producto] ++;
 
-        carrito[producto]++;
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> ${button}`;
+
         
-
+    } /* Si ya estaba, le sumamos uno */ else {
+        
+        carrito[producto] ++ ;
+        document.querySelector('.cesta ul').innerHTML.replace(carrito[producto]);
+    
     }
 
-
+    button.addEventListener('click', borrarCarrito);
 
     
 } 
