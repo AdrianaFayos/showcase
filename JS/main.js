@@ -1,4 +1,4 @@
-const almacen = {
+let almacen = {
 
     Agua: {
         precio: 0.4,
@@ -7,27 +7,27 @@ const almacen = {
 
     Leche: {
         precio: 0.9,
-        stock: 2,
+        stock: 3,
     },
 
     Pan: {
         precio: 0.6,
-        stock: 3,
+        stock: 9,
     },
 
     Pasta: {
         precio: 1.2,
-        stock: 1,
+        stock: 4,
     },
 
     Pollo: {
         precio: 4.5,
-        stock: 2,
+        stock: 3,
     },
 
     Ternera: {
         precio: 6.9,
-        stock: 1,
+        stock: 2,
     },
 
     Berenjena: {
@@ -57,12 +57,12 @@ const almacen = {
 
     Galletas: {
         precio: 1.1,
-        stock: 2,
+        stock: 4,
     },
 
 }
 
-const carrito = {
+let carrito = {
 
     Agua: 0,
     Leche: 0,
@@ -79,7 +79,7 @@ const carrito = {
 
 }
 
-function allowDrop(ev) {
+function startDrop(ev) {
     ev.preventDefault();
   }
   
@@ -90,5 +90,73 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
 
+    const producto = ev.dataTransfer.getData("text");
+
+    // Si no hay stock en el almacen ya no podemos añadir al carrito.
+
+    if (almacen[producto].stock === 0) {
+
+        alert('Lo siento, no quedan más unidades.');
+        drag(ev) == false;
+
+    } /* Si hay stock: */ else{
+        
+    almacen[producto].stock--;
+
+    console.log(`Quedan ${almacen[producto].stock} unidades de ${producto} en el almacen."`);
+
+    // Si no estaba en el carrito, lo añadimos
+
+    const botonEliminar = document.createElement('button');
+    botonEliminar.type = 'button';
+    botonEliminar.innerText = '-';
+
+    if (carrito[producto] === 0) {
+            
+        carrito[producto] ++;
+
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> `;
+        
+
     
-}    
+    } /* Si ya estaba, le sumamos uno */ else {
+        
+        carrito[producto] ++ ;
+        document.querySelector('.cesta ul').innerHTML.replace(carrito[producto]);
+    
+    }
+
+    botonEliminar.addEventListener('click', borrarElemento);
+
+} 
+
+
+
+// Boton para borrar un elemento
+function borrarElemento(){
+
+}
+
+}
+
+// Boton para realizar la compra
+function realizarCompra () {
+ 
+    if( document.querySelector('.cesta ul').innerText.length < 1 ) {
+       
+        alert('Lo siento, no hay artículos en su carrito.'); 
+   
+    } else {
+
+      alert('Enhorabuena, ha completado su compra.');   
+      eliminarTodo();
+
+    }
+}
+
+// Boton para vaciar toda la compra
+function eliminarTodo (){
+
+    document.querySelector('.cesta ul').innerHTML = "";
+
+}

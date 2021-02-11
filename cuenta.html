@@ -15,7 +15,7 @@
           <a class="principal" href="index.html">Productos</a>
           <a class="contact" href="contacto.html">Contacto</a>  
           <img src="IMG/carrito.png" name="Carro" width="50px"> 
-          <a class="carrito" href="carrito.html">Carrito</a>
+          <a class="carrito" href="cuenta.html">Perfil</a>
           <a class="buscador">
             <input type="text" id="search" placeholder="Buscar aquí">
             <button class="button" id="boton"><img src="IMG/boton.png" width="10px"></button>
@@ -23,16 +23,19 @@
        </nav>           
     </header>
 
-    <main class="cestafinal">
-        <div class="cesta" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <h2 class="carritotext">Carrito</h2>
-            <ul>
-                <!-- Los productos se añaden aquí por JS-->
-            </ul>
-            <br></br>
-            <div class="preciototal">Total:<span class="total"></span></div>
-            <button type="button">Realizar Compra</button>      
-          </div>
+    <main class="contenido">
+
+      <div class="cuenta">
+        <h2 id="entrar">Entrar</h2>
+        <input type="text" id="fname" name="fname" placeholder="Nombre">
+        <br><br>
+        <input id="email" name="email" placeholder="E-mail">
+        <br><br> <p id="contrasenya">¿Olvidaste tu contraseña?</p>
+        <button type="button">Entrar</button>
+        <br></br>
+        <p><b>¿Nuevo por aquí?</p></b>
+        <button type="button">Regístrate</button>
+      </div>
     </main>
 
     <footer> </footer>
