@@ -107,18 +107,18 @@ function drop(ev) {
 
     // Si no estaba en el carrito, lo añadimos
 
+    const botonEliminar = document.createElement('button');
+    botonEliminar.type = 'button';
+    botonEliminar.innerText = '-';
+
     if (carrito[producto] === 0) {
-        
-        const button = document.createElement('button');
-        button.className = "botonEliminar";
-        button.type = 'button';
-        button.innerText = '-';
-        
+            
         carrito[producto] ++;
 
-        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> ${button}`;
-
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> `;
         
+
+    
     } /* Si ya estaba, le sumamos uno */ else {
         
         carrito[producto] ++ ;
@@ -126,9 +126,37 @@ function drop(ev) {
     
     }
 
-    button.addEventListener('click', borrarCarrito);
+    botonEliminar.addEventListener('click', borrarElemento);
 
-    
 } 
+
+
+
+// Boton para borrar un elemento
+function borrarElemento(){
+
+}
+
+}
+
+// Boton para realizar la compra
+function realizarCompra () {
+ 
+    if( document.querySelector('.cesta ul').innerText.length < 1 ) {
+       
+        alert('Lo siento, no hay artículos en su carrito.'); 
+   
+    } else {
+
+      alert('Enhorabuena, ha completado su compra.');   
+      eliminarTodo();
+
+    }
+}
+
+// Boton para vaciar toda la compra
+function eliminarTodo (){
+
+    document.querySelector('.cesta ul').innerHTML = "";
 
 }

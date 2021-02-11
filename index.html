@@ -15,7 +15,7 @@
       <a class="principal" href="index.html">Productos</a>
       <a class="contact" href="contacto.html">Contacto</a>   
       <img class="img" src="IMG/carrito.png" name="Carro" width="50px">
-      <a class="carrito" href="carrito.html">Carrito</a>
+      <a class="carrito" href="cuenta.html">Perfil</a>
       <a class="buscador">
           <input type="text" id="search" placeholder="Buscar aquí">
           <button class="button" id="boton"><img class="img" src="IMG/boton.png" width="10px"></button>
@@ -106,10 +106,12 @@
     <div class="cesta" ondrop="drop(event)" ondragover="startDrop(event)">
       <h2 class="carritotext">Carrito</h2>
       <ul>
-          <!-- Los productos se añaden por js -->
+          <!-- Los productos se añaden por main.js -->
       </ul>
       <div class="preciototal">Total:<span class="total"></span></div>
-      <button type="button">Realizar Compra</button>      
+      <br></br>  
+      <button type="button" onclick="realizarCompra()">Realizar Compra</button>      
+      <button type="button" onclick="eliminarTodo()">Vaciar Carrito</button>    
     </div>
 
    </aside>
