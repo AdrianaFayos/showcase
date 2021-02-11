@@ -1,10 +1,6 @@
 # Showcase Dinámico
 
-<br><br>
-
 <p>Reto 2 del Bootcamp Frontend React Online: tratar de recrear un mostrador de alimentos dinámico con carrito de compra.</p>
-
-<br><br>
 
 <h2>Índice</h2>
 <ol>
@@ -14,12 +10,8 @@
   <li>Copyright y licencia</li>
 </ol>
 
-<br><br>
-
 <h4>Estructura del proyecto</h4>
 <p>Crearemos un proyecto basado en un conjunto de archivos Html, Css y Javascript.</p>
-
-<br><br>
 
 <h4>Contenido de la Web</h4>
 <ul>
@@ -29,8 +21,6 @@
   <li>Buscador</li>
 </ul>
 
-<br><br>
-
 <h4>Tecnologías utilizada</h4>
 <ul>
   <li>HTML 5</li>
@@ -38,8 +28,6 @@
   <li>JavaScript - ES6</li>
   <li>Git</li>
 </ul>
-
-<br><br>
 
 <h4>Copyright y licencia</h4>
 <p>Proyecto realizado por Adriana Fayos para el Bootcamp Frontend React Online de GeekshubAcademy.</p>
