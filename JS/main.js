@@ -1,4 +1,4 @@
-let almacen = {
+const almacen = {
 
     Agua: {
         precio: 0.4,
@@ -62,7 +62,7 @@ let almacen = {
 
 }
 
-let carrito = {
+const carrito = {
 
     Agua: 0,
     Leche: 0,
@@ -79,6 +79,8 @@ let carrito = {
 
 }
 
+let total = 0;
+
 function startDrop(ev) {
     ev.preventDefault();
   }
@@ -88,6 +90,7 @@ function drag(ev) {
   }
   
 function drop(ev) {
+
     ev.preventDefault();
 
     const producto = ev.dataTransfer.getData("text");
@@ -105,36 +108,46 @@ function drop(ev) {
 
     console.log(`Quedan ${almacen[producto].stock} unidades de ${producto} en el almacen."`);
 
-    // Si no estaba en el carrito, lo añadimos
-
     const botonEliminar = document.createElement('button');
     botonEliminar.type = 'button';
     botonEliminar.innerText = '-';
 
+    // Si no estaba en el carrito, lo añadimos
     if (carrito[producto] === 0) {
             
         carrito[producto] ++;
 
         document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> `;
         
-
     
     } /* Si ya estaba, le sumamos uno */ else {
         
         carrito[producto] ++ ;
-        document.querySelector('.cesta ul').innerHTML.replace(carrito[producto]);
-    
+        document.querySelector(carrito[producto]).innerHTML.replace(carrito[producto]);
+
     }
+    
+    preciototal();
 
     botonEliminar.addEventListener('click', borrarElemento);
 
 } 
 
+ // Calcular el precio total
+function preciototal(){
+    total = total + almacen[producto].precio;
+    document.querySelector('.total').innerHTML = ` ${total} €`;
+    console.log(`Su carrito es de un total de ${total} €`)
+}
 
 
-// Boton para borrar un elemento
+
+// Boton para borrar un elemento AQUI ME FALTA AÑADIR EL BOTON
 function borrarElemento(){
-
+    almacen[producto].stock++;
+    total = total - almacen[producto].precio;
+    document.querySelector('.total').innerHTML = ` ${total} €`;
+    console.log(`Su carrito es de un total de ${total} €`)    
 }
 
 }
@@ -156,7 +169,12 @@ function realizarCompra () {
 
 // Boton para vaciar toda la compra
 function eliminarTodo (){
-
+    
+    carrito[producto] == 0
+    //AQUI ME FALTA LA FUNCIÓN QUE RESTABLEZCA EL STOCK
     document.querySelector('.cesta ul').innerHTML = "";
-
+    console.log('Ha eliminado todo su carrito')
+    document.querySelector('.total').innerHTML = "";
+    total = 0;
+    
 }

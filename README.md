@@ -6,7 +6,7 @@
 <ol>
   <li>Estructura del proyecto</li>
   <li>Contenido de la Web</li>
-  <li>Tecnologías utilizada</li>
+  <li>Tecnologías utilizadas</li>
   <li>Copyright y licencia</li>
 </ol>
 
