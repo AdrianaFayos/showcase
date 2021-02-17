@@ -1,66 +1,67 @@
 const almacen = {
 
     Agua: {
-        precio: 0.4,
+        precio: 0.40,
         stock: 5,
     },
 
     Leche: {
-        precio: 0.9,
+        precio: 0.90,
         stock: 3,
     },
 
     Pan: {
-        precio: 0.6,
+        precio: 0.60,
         stock: 9,
     },
 
     Pasta: {
-        precio: 1.2,
+        precio: 1.20,
         stock: 4,
     },
 
     Pollo: {
-        precio: 4.5,
+        precio: 4.50,
         stock: 3,
     },
 
     Ternera: {
-        precio: 6.9,
+        precio: 6.90,
         stock: 2,
     },
 
     Berenjena: {
-        precio: 1.8,
+        precio: 1.80,
         stock: 8,
     },
 
     Esparragos: {
-        precio: 1.2,
+        precio: 1.20,
         stock: 6,
     },
 
     Fresas: {
-        precio: 3.6,
+        precio: 3.60,
         stock: 4,
     },
 
     Naranjas: {
-        precio: 3.1,
+        precio: 3.10,
         stock: 5,
     },
 
     Chocolate: {
-        precio: 1.3,
+        precio: 1.30,
         stock: 2,
     },
 
     Galletas: {
-        precio: 1.1,
+        precio: 1.10,
         stock: 4,
     },
 
 }
+
 
 const carrito = {
 
@@ -115,16 +116,17 @@ function drop(ev) {
     // Si no estaba en el carrito, lo añadimos
     if (carrito[producto] === 0) {
             
-        carrito[producto] ++;
+        carrito[producto] = 1;
 
-        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p> `;
-        
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p>`;
+
+        console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `)
     
     } /* Si ya estaba, le sumamos uno */ else {
         
-        carrito[producto] ++ ;
-        document.querySelector(carrito[producto]).innerHTML.replace(carrito[producto]);
-
+        carrito[producto] = carrito[producto] + 1 ; 
+        document.querySelector('.cesta ul').innerText.replace(`<p>${producto} ${carrito[producto]}</p>`);
+        console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `);
     }
     
     preciototal();
@@ -137,13 +139,14 @@ function drop(ev) {
 function preciototal(){
     total = total + almacen[producto].precio;
     document.querySelector('.total').innerHTML = ` ${total} €`;
-    console.log(`Su carrito es de un total de ${total} €`)
+    console.log(`Su carrito es un total de ${total} €`)
 }
 
 
 
 // Boton para borrar un elemento AQUI ME FALTA AÑADIR EL BOTON
 function borrarElemento(){
+    carrito[producto]--;
     almacen[producto].stock++;
     total = total - almacen[producto].precio;
     document.querySelector('.total').innerHTML = ` ${total} €`;
@@ -169,8 +172,9 @@ function realizarCompra () {
 
 // Boton para vaciar toda la compra
 function eliminarTodo (){
-    
-    carrito[producto] == 0
+   
+    almacen.prototype.clear();
+    carrito === 0;
     //AQUI ME FALTA LA FUNCIÓN QUE RESTABLEZCA EL STOCK
     document.querySelector('.cesta ul').innerHTML = "";
     console.log('Ha eliminado todo su carrito')
