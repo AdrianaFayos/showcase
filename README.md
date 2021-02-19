@@ -7,7 +7,6 @@
   <li>Estructura del proyecto</li>
   <li>Contenido de la Web</li>
   <li>Tecnologías utilizadas</li>
-  <li>Copyright y licencia</li>
 </ol>
 
 <h4>Estructura del proyecto</h4>
@@ -29,7 +28,5 @@
   <li>Git</li>
 </ul>
 
-<h4>Copyright y licencia</h4>
-<p>Proyecto realizado por Adriana Fayos para el Bootcamp Frontend React Online de GeekshubAcademy.</p>
 
 

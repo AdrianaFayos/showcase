@@ -112,6 +112,7 @@ function drop(ev) {
     const botonEliminar = document.createElement('button');
     botonEliminar.type = 'button';
     botonEliminar.innerText = '-';
+    
 
     // Si no estaba en el carrito, lo añadimos
     if (carrito[producto] === 0) {
@@ -125,7 +126,7 @@ function drop(ev) {
     } /* Si ya estaba, le sumamos uno */ else {
         
         carrito[producto] = carrito[producto] + 1 ; 
-        document.querySelector('.cesta ul').innerText.replace(`<p>${producto} ${carrito[producto]}</p>`);
+        document.querySelector('.cesta ul').textContent
         console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `);
     }
     
@@ -150,7 +151,7 @@ function borrarElemento(){
     almacen[producto].stock++;
     total = total - almacen[producto].precio;
     document.querySelector('.total').innerHTML = ` ${total} €`;
-    console.log(`Su carrito es de un total de ${total} €`)    
+    console.log(`Su carrito es de un total de ${total} €`);
 }
 
 }
@@ -173,7 +174,6 @@ function realizarCompra () {
 // Boton para vaciar toda la compra
 function eliminarTodo (){
    
-    almacen.prototype.clear();
     carrito === 0;
     //AQUI ME FALTA LA FUNCIÓN QUE RESTABLEZCA EL STOCK
     document.querySelector('.cesta ul').innerHTML = "";
