@@ -122,7 +122,7 @@ function drop(ev) {
     } /* Si ya estaba, le sumamos uno */ else {
         
         carrito[producto] = carrito[producto] + 1 ; 
-        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p>`;
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto] - 1}</p>`;
         console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `)
     }
     
