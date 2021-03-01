@@ -109,10 +109,6 @@ function drop(ev) {
 
     console.log(`Quedan ${almacen[producto].stock} unidades de ${producto} en el almacen."`);
 
-    const botonEliminar = document.createElement('button');
-    botonEliminar.type = 'button';
-    botonEliminar.innerText = '-';
-    
 
     // Si no estaba en el carrito, lo añadimos
     if (carrito[producto] === 0) {
@@ -126,13 +122,11 @@ function drop(ev) {
     } /* Si ya estaba, le sumamos uno */ else {
         
         carrito[producto] = carrito[producto] + 1 ; 
-        document.querySelector('.cesta ul').textContent
-        console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `);
+        document.querySelector('.cesta ul').innerHTML += `<p>${producto} ${carrito[producto]}</p>`;
+        console.log(`Ha añadido ${carrito[producto]} ${producto} a su carrito. `)
     }
     
     preciototal();
-
-    botonEliminar.addEventListener('click', borrarElemento);
 
 } 
 
@@ -140,19 +134,9 @@ function drop(ev) {
 function preciototal(){
     total = total + almacen[producto].precio;
     document.querySelector('.total').innerHTML = ` ${total} €`;
-    console.log(`Su carrito es un total de ${total} €`)
+    console.log(`Su carrito tiene un total de ${total} €`)
 }
 
-
-
-// Boton para borrar un elemento AQUI ME FALTA AÑADIR EL BOTON
-function borrarElemento(){
-    carrito[producto]--;
-    almacen[producto].stock++;
-    total = total - almacen[producto].precio;
-    document.querySelector('.total').innerHTML = ` ${total} €`;
-    console.log(`Su carrito es de un total de ${total} €`);
-}
 
 }
 
